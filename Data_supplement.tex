@@ -1,0 +1,550 @@
+%%%%% SETUP DOCUMENT %%%%%
+\documentclass[12pt]{iopart}
+\usepackage{graphicx}   % used to say [pdftex]
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{harvard}
+\usepackage{multirow}
+\usepackage{epstopdf}
+\usepackage{adjustbox}
+% \usepackage{enumitem}
+\usepackage{lscape}
+\usepackage{rotating}
+% \usepackage[hidelinks]{hyperref}
+\usepackage[pdfencoding=auto,psdextra,hidelinks]{hyperref}
+% \hypersetup{hidelinks}
+\usepackage{setspace}
+% \usepackage{scrextend}
+\usepackage{float}	% Here definitely
+\usepackage{pdflscape} 	% Single landscape page
+\usepackage{cleveref}	%Capitalise refs
+\usepackage{caption}
+% \captionsetup{justification=raggedright,singlelinecheck=false}
+\usepackage{wasysym}
+\usepackage{caption}
+
+% SUPPLEMENTARY MATERIAL
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\begin{document}
+
+\title[Estimating central blood pressure from aortic flow - Data supplement]{DATA SUPPLEMENT\\
+Estimating central blood pressure from aortic flow: development and assessment of algorithms}
+
+\author{Jorge Mariscal-Harana$^{1}$, Peter H. Charlton$^{1}$, Samuel Vennin$^{1,2}$, Jorge Aramburu$^{3}$, Mateusz C. Florkow$^{1,4}$, Arna van Engelen$^{1}$, Torben Schneider$^{5}$, Hubrecht de Bliek$^{6}$, Bram Ruijsink$^{1,7}$, Israel Valverde$^{1,8}$, Philipp Beerbaum${^9}$, Heynric Grotenhuis$^{10}$, Marietta Charakida$^{1}$, Phil Chowienczyk${^2}$, Spencer Sherwin$^{11}$, and Jordi Alastruey$^{1,12}$}
+
+\address{
+$^1$ Department of Biomedical Engineering, School of Biomedical Engineering and Imaging Sciences, King's College London, King's Health Partners, SE1 7EH, UK\\
+$^2$ Department of Clinical Pharmacology, King's College London, King's Health Partners, London, SE1 7EH, UK\\
+$^3$ Universidad de Navarra, TECNUN Escuela de Ingenieros, 20018 Donostia-San Sebasti\'an, Spain\\
+$^4$ Philips Research, Cambridge, UK\\
+$^5$ Philips Healthcare UK, Philips Centre, Guildford Business Park, Guildford, Surrey, GU2 8HX, UK\\
+$^6$ HSDP Clinical Platforms, Philips Healthcare, Eindhoven, The Netherlands\\
+$^7$ Department of Cardiology, University Medical Centre Utrecht, Utrecht, The Netherlands\\
+$^8$ Cardiovascular Pathophysiology, Institute of Biomedicine of Seville, University Hospital of Virgen del Roc\'io, University of Seville, CIBERCV, CSIC, Seville, Spain.\\
+$^9$ Department of Pediatric Cardiology and Intensive Care, Hannover Medical School, Hannover, Germany\\
+$^{10}$ Department of Pediatric Cardiology, University Medical Center Utrecht / Wilhelmina Children's Hospital, Utrecht, The Netherlands.\\
+$^{11}$ Department of Aeronautics, South Kensington Campus, Imperial College London, SW7 2AZ, UK\\
+$^{12}$ Institute of Personalized Medicine, Sechenov University, Moscow, Russia
+}
+
+\ead{jorge.mariscal\_harana@kcl.ac.uk}
+
+\newpage
+
+\section{Bland-Altman plots assessing cBP estimates}
+\label{app:cBP_B-A}
+
+%%  DBP
+%   Scenario 1
+\begin{figure}[H]
+	\centering
+	\def\arraystretch{1.0}
+	\begin{tabular}[t]{cccc}
+		\multicolumn{4}{c}{\textbf{cBP algorithms}} \\
+        \hline
+
+	    & 2-element Windkessel & 3-element Windkessel & 1-D aortic \\
+	    \hline
+
+        & \multicolumn{3}{c}{\textbf{1-D dataset}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk2_DBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk3_DBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Aortic1D_DBP_B-A_Sc1.pdf}
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\
+% 		\hline
+
+        & \multicolumn{3}{c}{\textbf{Aortic Coarctation}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk2_DBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk3_DBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Aortic1D_DBP_B-A_Sc1.pdf}
+		\\
+		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\\\
+% 		& & & \footnotesize{Reference [mmHg]}\\
+
+% 		\hline
+		
+	    & \multicolumn{2}{c}{\textbf{Normotensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk2_DBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk3_DBP_B-A_Sc1.pdf} &
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+        % \hline
+
+        & \multicolumn{2}{c}{\textbf{Hypertensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk2_DBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk3_DBP_B-A_Sc1.pdf}
+		\\
+        & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+	\end{tabular}
+	\caption{Bland-Altman plots for cDBP estimation for Scenario 1. 
+	The 2-element Windkessel (\textcolor{red}{$\bigtriangleup$}), 3-element Windkessel (\textcolor{blue}{$\times$}) and 1-D aortic (\textcolor{black}{$\bigcirc$}) algorithms were assessed in the 1-D (top), `Aortic Coarctation' (second row), `Normotensive' (third row), and `Hypertensive' (bottom) datasets. y-axes are estimated minus reference cDBP values.}	
+    \label{fig:B-A_DBP_Sc1}
+\end{figure}
+%   Scenario 2
+\begin{figure}[H]
+	\centering
+	\def\arraystretch{1.0}
+	\begin{tabular}[t]{cccc}
+		\multicolumn{4}{c}{\textbf{cBP algorithms}} \\
+        \hline
+
+	    & 2-element Windkessel & 3-element Windkessel & 1-D aortic \\
+	    \hline
+
+        & \multicolumn{3}{c}{\textbf{1-D dataset}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk2_DBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk3_DBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Aortic1D_DBP_B-A_Sc2.pdf}
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\
+% 		\hline
+
+        & \multicolumn{3}{c}{\textbf{Aortic Coarctation}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk2_DBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk3_DBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Aortic1D_DBP_B-A_Sc2.pdf}
+		\\
+		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\\\
+
+% 		\hline
+		
+	    & \multicolumn{2}{c}{\textbf{Normotensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk2_DBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk3_DBP_B-A_Sc2.pdf} &
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+        % \hline
+
+        & \multicolumn{2}{c}{\textbf{Hypertensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk2_DBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk3_DBP_B-A_Sc2.pdf}
+		\\
+        & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+	\end{tabular}
+	\caption{Bland-Altman plots for cDBP estimation for Scenario 2. The 2-element Windkessel (\textcolor{red}{$\bigtriangleup$}), 3-element Windkessel (\textcolor{blue}{$\times$}) and 1-D aortic (\textcolor{black}{$\bigcirc$}) algorithms were assessed in the 1-D (top), `Aortic Coarctation' (second row), `Normotensive' (third row), and `Hypertensive' (bottom) datasets. y-axes are estimated minus reference cDBP values.}
+    \label{fig:B-A_DBP_Sc2}
+\end{figure}
+ 
+%%  MBP
+%   Scenario 1
+\begin{figure}[H]
+	\centering
+	\def\arraystretch{1.0}
+	\begin{tabular}[t]{cccc}
+		\multicolumn{4}{c}{\textbf{cBP algorithms}} \\
+        \hline
+
+	    & 2-element Windkessel & 3-element Windkessel & 1-D aortic \\
+	    \hline
+
+        & \multicolumn{3}{c}{\textbf{1-D dataset}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk2_MBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk3_MBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Aortic1D_MBP_B-A_Sc1.pdf}
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\
+% 		\hline
+
+        & \multicolumn{3}{c}{\textbf{Aortic Coarctation}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk2_MBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk3_MBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Aortic1D_MBP_B-A_Sc1.pdf}
+		\\
+		
+		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\\\
+
+% 		\hline
+		
+	    & \multicolumn{2}{c}{\textbf{Normotensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk2_MBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk3_MBP_B-A_Sc1.pdf} &
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+        % \hline
+
+        & \multicolumn{2}{c}{\textbf{Hypertensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk2_MBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk3_MBP_B-A_Sc1.pdf}
+		\\
+        & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+	\end{tabular}
+	\caption{Bland-Altman plots for cMBP estimation for Scenario 1. 
+	The 2-element Windkessel (\textcolor{red}{$\bigtriangleup$}), 3-element Windkessel (\textcolor{blue}{$\times$}) and 1-D aortic (\textcolor{black}{$\bigcirc$}) algorithms were assessed in the 1-D (top), `Aortic Coarctation' (second row), `Normotensive' (third row), and `Hypertensive' (bottom) datasets. y-axes are estimated minus reference cMBP values.}	
+    \label{fig:B-A_MBP_Sc1}
+\end{figure}
+%   Scenario 2
+\begin{figure}[H]
+	\centering
+	\def\arraystretch{1.0}
+	\begin{tabular}[t]{cccc}
+		\multicolumn{4}{c}{\textbf{cBP algorithms}} \\
+        \hline
+
+	    & 2-element Windkessel & 3-element Windkessel & 1-D aortic \\
+	    \hline
+
+        & \multicolumn{3}{c}{\textbf{1-D dataset}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk2_MBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk3_MBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Aortic1D_MBP_B-A_Sc2.pdf}
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\
+% 		\hline
+
+        & \multicolumn{3}{c}{\textbf{Aortic Coarctation}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk2_MBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk3_MBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Aortic1D_MBP_B-A_Sc2.pdf}
+		\\
+		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\\\
+
+% 		\hline
+		
+	    & \multicolumn{2}{c}{\textbf{Normotensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk2_MBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk3_MBP_B-A_Sc2.pdf} &
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+        % \hline
+
+        & \multicolumn{2}{c}{\textbf{Hypertensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk2_MBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk3_MBP_B-A_Sc2.pdf}
+		\\
+        & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+	\end{tabular}
+	\caption{Bland-Altman plots for cMBP estimation for Scenario 2. 
+	The 2-element Windkessel (\textcolor{red}{$\bigtriangleup$}), 3-element Windkessel (\textcolor{blue}{$\times$}) and 1-D aortic (\textcolor{black}{$\bigcirc$}) algorithms were assessed in the 1-D (top), `Aortic Coarctation' (second row), `Normotensive' (third row), and `Hypertensive' (bottom) datasets. y-axes are estimated minus reference cMBP values.}			
+    \label{fig:B-A_MBP_Sc2}
+\end{figure}
+
+%%  SBP
+%   Scenario 1
+\begin{figure}[H]
+	\centering
+	\def\arraystretch{1.0}
+	\begin{tabular}[t]{cccc}
+		\multicolumn{4}{c}{\textbf{cBP algorithms}} \\
+        \hline
+
+	    & 2-element Windkessel & 3-element Windkessel & 1-D aortic \\
+	    \hline
+
+        & \multicolumn{3}{c}{\textbf{1-D dataset}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk2_SBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk3_SBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Aortic1D_SBP_B-A_Sc1.pdf}
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\
+% 		\hline
+
+        & \multicolumn{3}{c}{\textbf{Aortic Coarctation}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk2_SBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk3_SBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Aortic1D_SBP_B-A_Sc1.pdf}
+		\\
+		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\\\
+
+% 		\hline
+		
+	    & \multicolumn{2}{c}{\textbf{Normotensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk2_SBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk3_SBP_B-A_Sc1.pdf} &
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+        % \hline
+
+        & \multicolumn{2}{c}{\textbf{Hypertensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk2_SBP_B-A_Sc1.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk3_SBP_B-A_Sc1.pdf}
+		\\
+        & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+	\end{tabular}
+	\caption{Bland-Altman plots for cSBP estimation for Scenario 1. 
+	The 2-element Windkessel (\textcolor{red}{$\bigtriangleup$}), 3-element Windkessel (\textcolor{blue}{$\times$}) and 1-D aortic (\textcolor{black}{$\bigcirc$}) algorithms were assessed in the 1-D (top), `Aortic Coarctation' (second row), `Normotensive' (third row), and `Hypertensive' (bottom) datasets. y-axes are estimated minus reference cSBP values.}	
+    \label{fig:B-A_SBP_Sc1}
+\end{figure}
+%   Scenario 2
+\begin{figure}[H]
+	\centering
+	\def\arraystretch{1.0}
+	\begin{tabular}[t]{cccc}
+		\multicolumn{4}{c}{\textbf{cBP algorithms}} \\
+        \hline
+
+	    & 2-element Windkessel & 3-element Windkessel & 1-D aortic \\
+	    \hline
+
+        & \multicolumn{3}{c}{\textbf{1-D dataset}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk2_SBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Wk3_SBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/pwdb_4374_Aortic1D_SBP_B-A_Sc2.pdf}
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\
+% 		\hline
+
+        & \multicolumn{3}{c}{\textbf{Aortic Coarctation}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk2_SBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Wk3_SBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Isra_AoCoarctation_Aortic1D_SBP_B-A_Sc2.pdf}
+		\\
+		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]}\\\\
+
+% 		\hline
+		
+	    & \multicolumn{2}{c}{\textbf{Normotensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk2_SBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Normotensive_Wk3_SBP_B-A_Sc2.pdf} &
+		\\
+% 		& \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+        % \hline
+
+        & \multicolumn{2}{c}{\textbf{Hypertensive}} \\
+        \rotatebox{90}{\footnotesize{Est. - Ref. [mmHg]}} &
+		\includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk2_SBP_B-A_Sc2.pdf}
+		& \includegraphics[width = 0.3\linewidth]{./Figures/Sam_Hypertensive_Wk3_SBP_B-A_Sc2.pdf}
+		\\
+        & \footnotesize{Reference [mmHg]} & \footnotesize{Reference [mmHg]} & \\
+	\end{tabular}
+	\caption{Bland-Altman plots for cSBP estimation for Scenario 2. 
+	The 2-element Windkessel (\textcolor{red}{$\bigtriangleup$}), 3-element Windkessel (\textcolor{blue}{$\times$}) and 1-D aortic (\textcolor{black}{$\bigcirc$}) algorithms were assessed in the 1-D (top), `Aortic Coarctation' (second row), `Normotensive' (third row), and `Hypertensive' (bottom) datasets. y-axes are estimated minus reference cSBP values.}
+    \label{fig:B-A_SBP_Sc2}
+\end{figure}
+
+\section{Reference vs estimated cBP waves}
+\label{app:cBP_waveform_comparison}
+
+%%	116-artery
+\subsection{cBP estimations in a set of randomly chosen 1-D model subjects}
+\label{sec:116-artery_vs_cBP_models}
+
+\begin{figure}[H]
+	\centering
+	\vspace{-0.8cm}
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/pwdb_4374_waveform_Sc1_1.pdf}
+	\label{fig:116-artery_vs_cBP_models_Sc1_1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/pwdb_4374_waveform_Sc1_2.pdf}
+	\caption{cBP wave estimations for Scenario 1. cBP waves calculated using the 2-element Windkessel (red lines), 3-element Windkessel (blue lines), and 1-D aortic (black lines) cBP algorithms. They are compared against reference cBP waves from the 1-D model dataset (thick black lines).}
+    \label{fig:116-artery_vs_cBP_models_Sc1_2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\vspace{-0.8cm}
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/pwdb_4374_waveform_Sc2_1.pdf}
+	\label{fig:116-artery_vs_cBP_models_Sc2_1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/pwdb_4374_waveform_Sc2_2.pdf}
+    \caption{cBP wave estimations for Scenario 2. cBP waves calculated using the 2-element Windkessel (red lines), 3-element Windkessel (blue lines), and 1-D aortic (black lines) cBP algorithms. They are compared against reference cBP waves from the 1-D model dataset (thick black lines).}
+    \label{fig:116-artery_vs_cBP_models_Sc2_2}
+\end{figure}
+
+%%  Aortic coarctation
+\subsection{cBP estimations in the `Aortic Coarctation' dataset}
+\label{sec:AoCo_vs_Aortic1D}
+
+\begin{figure}[H]
+	\centering
+	\vspace{-0.5cm}
+    \includegraphics[width = 1\linewidth,trim={1cm 7.5cm 1cm
+    2.5cm},clip]{./Figures/Isra_AoCoarctation_waveform_Sc1_1.pdf}
+	\caption{cBP wave estimations for Scenario 1. cBP waves calculated using the 2-element Windkessel (red lines), 3-element Windkessel (blue lines), and 1-D aortic (black lines) cBP algorithms. They are compared against catheter measurements from the `Aortic Coarctation' dataset (thick black lines).}
+	%\caption{cBP wave comparison for Scenario 1. Vertical axis: blood pressure [mmHg]; horizontal axis: time [s]. Thick black line: reference cBP wave from catheter measurements; dashed black, blue, and red lines: 1-D aortic, 3-element Windkessel, and 2-element Windkessel cBP estimations, respectively.}
+	\label{fig:AoCo_vs_Aortic1D_Sc1_1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\vspace{-0.5cm}
+    \includegraphics[width = 1\linewidth,trim={1cm 7.5cm 1cm
+    2.5cm},clip]{./Figures/Isra_AoCoarctation_waveform_Sc2_1.pdf}
+    \caption{cBP wave estimations for Scenario 2. cBP waves calculated using the 2-element Windkessel (red lines), 3-element Windkessel (blue lines), and 1-D aortic (black lines) cBP algorithms. They are compared against catheter measurements from the `Aortic Coarctation' dataset (thick black lines).}
+	\label{fig:AoCo_vs_Aortic1D_Sc2_1}
+\end{figure}
+
+%%  Normotensive
+\subsection{cBP estimations in the `Normotensive' dataset}
+\label{sec:Normo_vs_Wk}
+
+\begin{figure}[H]
+	\centering
+    \vspace{-0.5cm}
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Normotensive_waveform_Sc1_1.pdf}
+	\label{fig:Normo_vs_Wk_Sc1_1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Normotensive_waveform_Sc1_2.pdf}
+	\label{fig:Normo_vs_Wk_Sc1_2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Normotensive_waveform_Sc1_3.pdf}
+	\label{fig:Normo_vs_Wk_Sc1_3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 18cm 1cm
+    2.5cm},clip]{./Figures/Sam_Normotensive_waveform_Sc1_4.pdf}
+    \caption{cBP wave estimations for Scenario 1. cBP waves calculated using the 2-element Windkessel (red lines) and 3-element Windkessel (blue lines) cBP algorithms. They are compared against reference cBP waves from the `Normotensive' dataset (thick black lines).}
+	\label{fig:Normo_vs_Wk_Sc1_4}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \vspace{-0.5cm}
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Normotensive_waveform_Sc2_1.pdf}
+	\label{fig:Normo_vs_Wk_Sc2_1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Normotensive_waveform_Sc2_2.pdf}
+	\label{fig:Normo_vs_Wk_Sc2_2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Normotensive_waveform_Sc2_3.pdf}
+	\label{fig:Normo_vs_Wk_Sc2_3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 18cm 1cm
+    2.5cm},clip]{./Figures/Sam_Normotensive_waveform_Sc1_4.pdf}
+    \caption{cBP wave estimations for Scenario 2. cBP waves calculated using the 2-element Windkessel (red lines) and 3-element Windkessel (blue lines) cBP algorithms. They are compared against reference cBP waves from the `Normotensive' dataset (thick black lines).}
+	%\caption{cBP wave comparison for Scenario 2. Thick black line: reference cBP wave from `Normotensive' dataset; dashed blue line: 3-element Windkessel estimation; and dashed red line: 2-element Windkessel estimation.}
+	\label{fig:Normo_vs_Wk_Sc2_4}
+\end{figure}
+
+%%  Hypertensive
+\subsection{cBP estimations in the `Hypertensive' dataset}
+\label{sec:Hyper_vs_Wk}
+
+\begin{figure}[H]
+	\centering
+    \vspace{-0.5cm}
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Hypertensive_waveform_Sc1_1.pdf}
+	\label{fig:Hyper_vs_Wk_Sc1_1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Hypertensive_waveform_Sc1_2.pdf}
+	\label{fig:Hyper_vs_Wk_Sc1_2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Hypertensive_waveform_Sc1_3.pdf}
+	\label{fig:Hyper_vs_Wk_Sc1_3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 3cm 1cm
+    2.5cm},clip]{./Figures/Sam_Hypertensive_waveform_Sc1_4.pdf}
+    \caption{cBP wave estimations for Scenario 1. cBP waves calculated using the 2-element Windkessel (red lines) and 3-element Windkessel (blue lines) cBP algorithms. They are compared against reference cBP waves from the `Hypertensive' dataset (thick black lines).}
+	\label{fig:Hyper_vs_Wk_Sc1_4}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \vspace{-0.5cm}
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Hypertensive_waveform_Sc2_1.pdf}
+	\label{fig:Hyper_vs_Wk_Sc2_1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Hypertensive_waveform_Sc2_2.pdf}
+	\label{fig:Hyper_vs_Wk_Sc2_2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 2.5cm 1cm
+    2.5cm},clip]{./Figures/Sam_Hypertensive_waveform_Sc2_3.pdf}
+	\label{fig:Hyper_vs_Wk_Sc2_3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width = 1\linewidth,trim={2cm 3cm 1cm
+    2.5cm},clip]{./Figures/Sam_Hypertensive_waveform_Sc1_4.pdf}
+    \caption{cBP wave estimations for Scenario 2. cBP waves calculated using the 2-element Windkessel (red lines) and 3-element Windkessel (blue lines) cBP algorithms. They are compared against reference cBP waves from the `Hypertensive' dataset (thick black lines).}  
+	\label{fig:Hyper_vs_Wk_Sc2_4}
+\end{figure}
+
+\end{document}
